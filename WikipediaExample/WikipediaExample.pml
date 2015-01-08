@@ -40,7 +40,6 @@
         <File name="exceptions" src="lib/requests/exceptions.py" />
         <File name="hooks" src="lib/requests/hooks.py" />
         <File name="models" src="lib/requests/models.py" />
-        <File name="README" src="lib/requests/packages/README.rst" />
         <File name="__init__" src="lib/requests/packages/__init__.py" />
         <File name="__init__" src="lib/requests/packages/chardet/__init__.py" />
         <File name="big5freq" src="lib/requests/packages/chardet/big5freq.py" />
@@ -110,63 +109,26 @@
         <File name="status_codes" src="lib/requests/status_codes.py" />
         <File name="structures" src="lib/requests/structures.py" />
         <File name="utils" src="lib/requests/utils.py" />
+        <File name="PKG-INFO" src="lib/beautifulsoup4-4.3.2-py2.7.egg-info/PKG-INFO" />
+        <File name="SOURCES" src="lib/beautifulsoup4-4.3.2-py2.7.egg-info/SOURCES.txt" />
+        <File name="dependency_links" src="lib/beautifulsoup4-4.3.2-py2.7.egg-info/dependency_links.txt" />
+        <File name="installed-files" src="lib/beautifulsoup4-4.3.2-py2.7.egg-info/installed-files.txt" />
+        <File name="top_level" src="lib/beautifulsoup4-4.3.2-py2.7.egg-info/top_level.txt" />
+        <File name="DESCRIPTION" src="lib/requests-2.5.1.dist-info/DESCRIPTION.rst" />
+        <File name="METADATA" src="lib/requests-2.5.1.dist-info/METADATA" />
+        <File name="RECORD" src="lib/requests-2.5.1.dist-info/RECORD" />
+        <File name="WHEEL" src="lib/requests-2.5.1.dist-info/WHEEL" />
+        <File name="metadata" src="lib/requests-2.5.1.dist-info/metadata.json" />
+        <File name="top_level" src="lib/requests-2.5.1.dist-info/top_level.txt" />
+        <File name="PKG-INFO" src="lib/wikipedia-1.4.0-py2.7.egg-info/PKG-INFO" />
+        <File name="SOURCES" src="lib/wikipedia-1.4.0-py2.7.egg-info/SOURCES.txt" />
+        <File name="dependency_links" src="lib/wikipedia-1.4.0-py2.7.egg-info/dependency_links.txt" />
+        <File name="installed-files" src="lib/wikipedia-1.4.0-py2.7.egg-info/installed-files.txt" />
+        <File name="requires" src="lib/wikipedia-1.4.0-py2.7.egg-info/requires.txt" />
+        <File name="top_level" src="lib/wikipedia-1.4.0-py2.7.egg-info/top_level.txt" />
     </Resources>
     <Topics>
         <Topic name="ExampleDialog_jpj" src="behavior_1/ExampleDialog/ExampleDialog_jpj.top" topicName="ExampleDialog" language="ja_JP" />
     </Topics>
-    <IgnoredPaths>
-        <Path src="lib/bs4/element.pyc" />
-        <Path src="lib/requests/hooks.pyc" />
-        <Path src="lib/requests/api.pyc" />
-        <Path src="lib/bs4/dammit.pyc" />
-        <Path src="lib/requests/packages/urllib3/filepost.pyc" />
-        <Path src="lib/requests/packages/urllib3/connectionpool.pyc" />
-        <Path src="lib/requests/packages/urllib3/packages/__init__.pyc" />
-        <Path src="lib/requests/status_codes.pyc" />
-        <Path src="lib/requests/packages/urllib3/fields.pyc" />
-        <Path src="lib/requests/auth.pyc" />
-        <Path src="lib/requests/packages/urllib3/connection.pyc" />
-        <Path src="lib/bs4/__init__.pyc" />
-        <Path src="lib/requests/packages/urllib3/packages/ordered_dict.pyc" />
-        <Path src="lib/requests/packages/urllib3/util/timeout.pyc" />
-        <Path src="lib/requests/adapters.pyc" />
-        <Path src="lib/requests/packages/urllib3/poolmanager.pyc" />
-        <Path src="lib/bs4/builder/__init__.pyc" />
-        <Path src="lib/requests/packages/urllib3/request.pyc" />
-        <Path src="lib/requests/packages/urllib3/packages/ssl_match_hostname/_implementation.pyc" />
-        <Path src="lib/requests/packages/urllib3/util/__init__.pyc" />
-        <Path src="lib/requests/packages/urllib3/util/ssl_.pyc" />
-        <Path src="lib/wikipedia/wikipedia.pyc" />
-        <Path src="lib/requests/packages/urllib3/contrib/pyopenssl.pyc" />
-        <Path src="lib/wikipedia/__init__.pyc" />
-        <Path src="lib/requests/packages/urllib3/packages/ssl_match_hostname/__init__.pyc" />
-        <Path src="lib/requests/exceptions.pyc" />
-        <Path src="requirements.txt" />
-        <Path src="lib/requests/models.pyc" />
-        <Path src="lib/requests/compat.pyc" />
-        <Path src="lib/requests/sessions.pyc" />
-        <Path src="lib/requests/cookies.pyc" />
-        <Path src="lib/requests/packages/urllib3/exceptions.pyc" />
-        <Path src="lib/requests/packages/urllib3/util/retry.pyc" />
-        <Path src="lib/requests/packages/urllib3/contrib/__init__.pyc" />
-        <Path src="lib/requests/packages/urllib3/packages/six.pyc" />
-        <Path src="lib/wikipedia/exceptions.pyc" />
-        <Path src="lib/bs4/builder/_lxml.pyc" />
-        <Path src="lib/requests/packages/__init__.pyc" />
-        <Path src="lib/wikipedia/util.pyc" />
-        <Path src="lib/requests/packages/urllib3/_collections.pyc" />
-        <Path src="lib/requests/packages/urllib3/util/response.pyc" />
-        <Path src="lib/requests/packages/chardet/__init__.pyc" />
-        <Path src="lib/requests/packages/urllib3/response.pyc" />
-        <Path src="lib/requests/packages/urllib3/util/connection.pyc" />
-        <Path src="lib/requests/utils.pyc" />
-        <Path src="lib/requests/__init__.pyc" />
-        <Path src="lib/bs4/builder/_htmlparser.pyc" />
-        <Path src="lib/requests/packages/urllib3/util/request.pyc" />
-        <Path src="lib/requests/structures.pyc" />
-        <Path src="lib/requests/packages/urllib3/__init__.pyc" />
-        <Path src="lib/bs4/builder/_html5lib.pyc" />
-        <Path src="lib/requests/certs.pyc" />
-        <Path src="lib/requests/packages/urllib3/util/url.pyc" />
-    </IgnoredPaths>
+    <IgnoredPaths />
 </Package>
