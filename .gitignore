@@ -1,2 +1,6 @@
-*/lib
 env
+*/lib/*
+# if you have your own python script myscript.py, then add it in lib folder and use:
+# !*/lib/myscript.py
+# for a folder /mypackage
+# !*/lib/mypackage/
