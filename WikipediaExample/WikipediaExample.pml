@@ -114,21 +114,22 @@
         <File name="dependency_links" src="lib/beautifulsoup4-4.3.2-py2.7.egg-info/dependency_links.txt" />
         <File name="installed-files" src="lib/beautifulsoup4-4.3.2-py2.7.egg-info/installed-files.txt" />
         <File name="top_level" src="lib/beautifulsoup4-4.3.2-py2.7.egg-info/top_level.txt" />
-        <File name="DESCRIPTION" src="lib/requests-2.5.1.dist-info/DESCRIPTION.rst" />
-        <File name="METADATA" src="lib/requests-2.5.1.dist-info/METADATA" />
-        <File name="RECORD" src="lib/requests-2.5.1.dist-info/RECORD" />
-        <File name="WHEEL" src="lib/requests-2.5.1.dist-info/WHEEL" />
-        <File name="metadata" src="lib/requests-2.5.1.dist-info/metadata.json" />
-        <File name="top_level" src="lib/requests-2.5.1.dist-info/top_level.txt" />
         <File name="PKG-INFO" src="lib/wikipedia-1.4.0-py2.7.egg-info/PKG-INFO" />
         <File name="SOURCES" src="lib/wikipedia-1.4.0-py2.7.egg-info/SOURCES.txt" />
         <File name="dependency_links" src="lib/wikipedia-1.4.0-py2.7.egg-info/dependency_links.txt" />
         <File name="installed-files" src="lib/wikipedia-1.4.0-py2.7.egg-info/installed-files.txt" />
         <File name="requires" src="lib/wikipedia-1.4.0-py2.7.egg-info/requires.txt" />
         <File name="top_level" src="lib/wikipedia-1.4.0-py2.7.egg-info/top_level.txt" />
+        <File name="DESCRIPTION" src="lib/requests-2.6.0.dist-info/DESCRIPTION.rst" />
+        <File name="METADATA" src="lib/requests-2.6.0.dist-info/METADATA" />
+        <File name="RECORD" src="lib/requests-2.6.0.dist-info/RECORD" />
+        <File name="WHEEL" src="lib/requests-2.6.0.dist-info/WHEEL" />
+        <File name="metadata" src="lib/requests-2.6.0.dist-info/metadata.json" />
+        <File name="top_level" src="lib/requests-2.6.0.dist-info/top_level.txt" />
     </Resources>
     <Topics>
         <Topic name="ExampleDialog_jpj" src="behavior_1/ExampleDialog/ExampleDialog_jpj.top" topicName="ExampleDialog" language="ja_JP" />
+        <Topic name="ExampleDialog_enu" src="behavior_1/ExampleDialog/ExampleDialog_enu.top" topicName="ExampleDialog" language="en_US" />
     </Topics>
     <IgnoredPaths />
 </Package>

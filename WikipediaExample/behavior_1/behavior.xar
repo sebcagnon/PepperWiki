@@ -27,7 +27,7 @@
         #put initialization code here
         import os
         import sys
-        behaviorPath = ALProxy("ALFrameManager").getBehaviorPath(self.behaviorId)
+        behaviorPath = self.session().service("ALFrameManager").getBehaviorPath(self.behaviorId)
         self.path = os.path.join(behaviorPath, '../lib')
         if self.path not in sys.path:
             sys.path.insert(0, self.path)
@@ -40,8 +40,17 @@
     def onInput_onStart(self, keyword):
         #self.onStopped() #activate the output of the box
         import wikipedia
-        wikipedia.set_lang('ja')
+        lang = self.session().service('ALTextToSpeech').getLanguage()
+        if lang == 'English':
+            wikipedia.set_lang('en')
+        elif lang == 'Japanese':
+            wikipedia.set_lang('ja')
+        else:
+            raise RuntimeError('current language not supported')
         searchResults = wikipedia.search(keyword)
+        if not searchResults:
+            self.onRetry()
+            return
         try:
             page = wikipedia.page(searchResults[0])
         except wikipedia.DisambiguationError, err:
@@ -58,6 +67,7 @@
                             <Input name="onStart" type="3" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
                             <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
                             <Output name="onStopped" type="3" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+                            <Output name="onRetry" type="1" type_size="1" nature="2" inner="0" tooltip="" id="5" />
                         </Box>
                         <Box name="Say Text" id="2" localization="8" tooltip="Say the text received on its input." x="328" y="185">
                             <bitmap>media/images/box/interaction/say.png</bitmap>
@@ -114,78 +124,6 @@ class MyClass(GeneratedClass):
                             <Parameter name="Voice shaping (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="150" tooltip='Used to modify at runtime the voice feature (tone, speed). In a slighty&#x0A;different way than pitch and speed, it gives a kind of &quot;gender or age&#x0A;modification&quot; effect.&#x0A;&#x0A;For instance, a quite good male derivation of female voice can be&#x0A;obtained setting this parameter to 78%.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the&#x0A;speed parameter. For example, if you want to decrease by 20% the voice&#x0A;shaping, you will have to increase by 20% the speed to keep a constant&#x0A;average speed.' id="5" />
                             <Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" />
                         </Box>
-                        <Box name="Set Language" id="3" localization="8" tooltip="Select the language you would like the robot to speak and understand. Any following call to&#x0A;ALSpeechRecognition (Speech Reco. box for instance) or ALTextToSpeech (Say box&#x0A;for instance) will use this language." x="49" y="14">
-                            <bitmap>media/images/box/interaction/say.png</bitmap>
-                            <script language="4">
-                                <content>
-                                    <![CDATA[class MyClass(GeneratedClass):
-    def __init__(self):
-        GeneratedClass.__init__(self, False)
-
-    def onLoad(self):
-        try:
-            self.tts = ALProxy("ALTextToSpeech")
-        except:
-            self.logger.warn("ALTextToSpeech is not available, language setting cannot be applied to speech")
-            self.tts = None
-
-        try:
-            self.asr = ALProxy("ALSpeechRecognition")
-        except:
-            self.logger.warn("ALSpeechRecognition is not available, language setting cannot be applied to recognition")
-            self.asr = None
-
-        try:
-            self.dialog = ALProxy("ALDialog")
-        except:
-            self.logger.warn("ALDialog is not available, language setting cannot be applied to dialog")
-            self.dialog = None
-
-    def onInput_onSet(self):
-        lang = self.getParameter("Language")
-        try:
-            if self.asr:
-                self.asr.setLanguage( self.getParameter("Language") )
-            if self.tts:
-                self.tts.setLanguage( self.getParameter("Language") )
-            if self.dialog:
-                self.dialog.setLanguage( self.getParameter("Language") )
-            if self.tts is None and self.asr is None and self.dialog is None:
-                raise RuntimeError("Cannot set language: neither ALTextToSpeech nor ALSpeechRecognition nor ALDialog is available.")
-            self.onReady()
-        except:
-            error = "Language " + lang + " cannot be set."
-            self.logger.warn(error)
-            self.onError(error)]]>
-</content>
-                            </script>
-                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
-                            <Input name="onSet" type="1" type_size="1" nature="1" inner="0" tooltip="The data is set when a signal is received on this input." id="2" />
-                            <Output name="onReady" type="1" type_size="1" nature="2" inner="0" tooltip="Signal sent when the data has been set." id="3" />
-                            <Output name="onError" type="3" type_size="1" nature="2" inner="0" tooltip="Error output:&#x0A;- triggered if the language asked cannot be set" id="4" />
-                            <Parameter name="Language" inherits_from_parent="0" content_type="3" value="Japanese" default_value="English" custom_choice="1" tooltip="Set the language the robot speaks and understands." id="5">
-                                <Choice value="Arabic" />
-                                <Choice value="Brazilian" />
-                                <Choice value="Chinese" />
-                                <Choice value="Czech" />
-                                <Choice value="Danish" />
-                                <Choice value="Dutch" />
-                                <Choice value="English" />
-                                <Choice value="Finnish" />
-                                <Choice value="French" />
-                                <Choice value="German" />
-                                <Choice value="Italian" />
-                                <Choice value="Japanese" />
-                                <Choice value="Korean" />
-                                <Choice value="Polish" />
-                                <Choice value="Portuguese" />
-                                <Choice value="Russian" />
-                                <Choice value="Spanish" />
-                                <Choice value="Swedish" />
-                                <Choice value="Turkish" />
-                            </Parameter>
-                            <Resource name="Speech" type="Lock" timeout="0" />
-                        </Box>
                         <Box name="Dialog" id="4" localization="8" tooltip="An example of multilanguage dialog implementation" x="259" y="46">
                             <dialogFile>ExampleDialog/ExampleDialog.dlg</dialogFile>
                             <bitmap>media/images/box/box-dialog.png</bitmap>
@@ -203,10 +141,10 @@ class MyClass(GeneratedClass):
                             <Resource name="Speech recognition" type="Lock" timeout="0" />
                         </Box>
                         <Link inputowner="2" indexofinput="2" outputowner="1" indexofoutput="4" />
-                        <Link inputowner="3" indexofinput="2" outputowner="0" indexofoutput="2" />
                         <Link inputowner="1" indexofinput="2" outputowner="4" indexofoutput="5" />
                         <Link inputowner="4" indexofinput="2" outputowner="2" indexofoutput="4" />
-                        <Link inputowner="4" indexofinput="2" outputowner="3" indexofoutput="3" />
+                        <Link inputowner="4" indexofinput="2" outputowner="0" indexofoutput="2" />
+                        <Link inputowner="4" indexofinput="2" outputowner="1" indexofoutput="5" />
                     </Diagram>
                 </BehaviorKeyframe>
             </BehaviorLayer>
