@@ -17,6 +17,8 @@ cd PepperWiki
 ./setup.sh
 ```
 
-Coming soon: Mac and Windows examples
+For Windows, use *./setup_win.sh* instead. OSX should work like Linux.
 
-Now you have the virtualenv folder env/ and the WikipediaExample/lib folder including all the Python libs
+Now you have the virtualenv folder env/ and the WikipediaExample/lib folder including all the Python libs required for making the Wikipedia work on your robot.
+
+For more info on how the app works, [check the associated tutorial](http://www.about-robots.com/make-pepper-know-everything-using-wikipedia.html).
